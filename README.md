@@ -21,6 +21,9 @@ If you find any errors or have suggestions, feel free to reach out: **maziyang@w
 ## 🌐 About
 In our work, we introduce the concept of **Model Hemorrhage**, a comprehensive framework that investigates how optimization techniques—such as pruning, quantization, and decoding adaptations—can lead to unexpected degradation in performance and stability. Through empirical analysis and theoretical insights, we reveal five key dimensions of fragility in LLMs: **architectural redundancy**, **model compression**, **training-inference**, **extension mechanisms**, and **data-related vulnerabilities**. To ground this framework, we present empirical case studies that illuminate key trade-offs—including cardinal sparsity thresholds for pruning, lossless quantization thresholds, full-size progressive quantization, and horizontal comparisons across different compression strategies and decoding methods.
 
+## 📚 Papers
+Coming soon.
+
 ## 📊 Case Studies
 ### ✂ Sensitivity to Pruning
 #### Features
@@ -229,3 +232,17 @@ We evaluate the performance of various decoding strategies on nine models (7B–
 <div align="center">
 <img src="./assets/decoding.jpg" style="width: 100%;height: 100%">
 </div>
+
+## 📌 Citation
+Please cite our paper if you find the repo helpful in your work:
+```
+@misc{ma2025modelhemorrhagerobustnesslimits,
+      title={Model Hemorrhage and the Robustness Limits of Large Language Models}, 
+      author={Ziyang Ma and Zuchao Li and Lefei Zhang and Gui-Song Xia and Bo Du and Liangpei Zhang and Dacheng Tao},
+      year={2025},
+      eprint={2503.23924},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2503.23924}, 
+}
+```
