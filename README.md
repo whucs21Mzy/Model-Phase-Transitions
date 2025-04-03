@@ -76,6 +76,15 @@ Coming soon.
 <img src="./assets/10-80.svg" style="width: 100%;height: 100%">
 </div>
 
+---
+
+#### **Comparison of Unstructured and Semi-structured Pruning Methods**
+
+**Fig. 4: Comparison of the performance of unstructured and structured pruning methods on WikiText2 PPL at 50\% sparsity. The figure compares the perplexity (PPL) of various pruning methods for a model pruned to 50\% sparsity. The methods include unstructured pruning (50\%), and two types of structured pruning: 4:8 and 2:4, which indicate that 4 out of every 8 weights or 2 out of every 4 weights are pruned, respectively.**
+<div align="center">
+<img src="./assets/semi.svg" style="width: 100%;height: 150%">
+</div>
+
 **Table 2: WikiText2-PPL for different unstructured and semi-structured methods**
 
 | Method                | 0.1    | 0.2    | 0.3    | 0.4    | 0.5    | 0.6    | 0.7    | 0.8    | 2:4(0.5) | 4:8(0.5) |
@@ -90,15 +99,6 @@ Coming soon.
 | Wanda_owl             | 5.4989 | 5.5901 | 6.0690 | 5.7550 | 6.7490 | 8.6492 | 25.1889 | 551.7274 | 11.4216 | - |
 | BESA-row              | -      | -      | -      | -      | 6.0057 | -      | 8.1769  | -      | -        | -        |
 | BESA-layer            | -      | -      | -      | -      | 5.9884 | -      | 9.0709  | -      | -        | -        |
-
----
-
-#### **Comparison of Unstructured and Semi-structured Pruning Methods**
-
-**Fig. 4: Comparison of the performance of unstructured and structured pruning methods on WikiText2 PPL at 50\% sparsity. The figure compares the perplexity (PPL) of various pruning methods for a model pruned to 50\% sparsity. The methods include unstructured pruning (50\%), and two types of structured pruning: 4:8 and 2:4, which indicate that 4 out of every 8 weights or 2 out of every 4 weights are pruned, respectively.**
-<div align="center">
-<img src="./assets/semi.svg" style="width: 100%;height: 150%">
-</div>
 
 **Table 3: WikiText2-PPL for different unstructured and semi-structured methods calibrate on PTB dataset**
 
