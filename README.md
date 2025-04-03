@@ -45,16 +45,18 @@ Coming soon.
 > **Challenges in unstructured pruning**: Unstructured pruning methods can achieve high compression rates (typically over 70%), but the performance trade-off is significant. Despite promising results in theory, practical applications face difficulties with acceleration. Many studies that use methods like Wanda and SparseGPT as baselines focus on extreme compression rates (>70%) for performance comparisons. However, these rates tend to cause catastrophic performance degradation, often referred to as "model hemorrhaging." In contrast, Wanda and SparseGPT perform better at lower sparsity levels, where other improved models fall short. Future research may need to shift focus towards performance at lower compression rates, possibly exploring combinations of pruning with quantization techniques to achieve better compression and faster inference without sacrificing too much accuracy. 
 >
 #### **Experimental Evaluation of Structured Pruning Methods Results**
-
-**Fig. 1: Performance comparison of different structured pruning methods applied to LLaMA2-7b, based on the WikiText2-PPL (Perplexity) metric, across varying sparsity levels. The chart highlights the impact of pruning on model performance, with lower PPL values indicating better performance.**
 <div align="center">
 <img src="./assets/structured_ppl.svg" style="width: 100%;height: 100%">
 </div>
 
-**Fig. 2: Perplexity performance of LLaMA-3-8B and OPT-6.7B under different pruning ratios (Pruned by Slicegpt).**
+**Fig. 1: Performance comparison of different structured pruning methods applied to LLaMA2-7b, based on the WikiText2-PPL (Perplexity) metric, across varying sparsity levels. The chart highlights the impact of pruning on model performance, with lower PPL values indicating better performance.**
+
 <div align="center">
 <img src="./assets/slice.png" style="width: 100%;height: 100%">
 </div>
+
+**Fig. 2: Perplexity performance of LLaMA-3-8B and OPT-6.7B under different pruning ratios (Pruned by Slicegpt).**
+
 
 **Table 1: WikiText2-PPL results for structured pruning (w/o: without finetuning)**
 
@@ -71,19 +73,23 @@ Coming soon.
 
 #### **Experimental Evaluation of Unstructured Pruning Methods Results**
 
-**Fig. 3: WikiText2 perplexity (PPL) trends for various structured pruning methods across sparsity levels ranging from 10\% to 80\%. The upper part of the figure shows the overall trend across the full sparsity spectrum, while the lower part zooms in on the 10\%--60\% range to highlight differences among pruning methods at moderate compression levels. Methods with "(ptb)" suffix indicate usage of the PTB calibration dataset in ablation studies. The results show that while many pruning methods suffer significant performance drops at higher sparsity, approaches like Wanda, SparseGPT, and ADMM consistently preserve model quality under lower sparsity, suggesting greater robustness and practical viability. Note that the magnitude pruning curve is omitted from the lower subplot, as it consistently shows the worst degradation and dominates the y-axis range in zoomed-in views.**
 <div align="center">
 <img src="./assets/10-80.svg" style="width: 100%;height: 100%">
 </div>
+
+**Fig. 3: WikiText2 perplexity (PPL) trends for various structured pruning methods across sparsity levels ranging from 10\% to 80\%. The upper part of the figure shows the overall trend across the full sparsity spectrum, while the lower part zooms in on the 10\%--60\% range to highlight differences among pruning methods at moderate compression levels. Methods with "(ptb)" suffix indicate usage of the PTB calibration dataset in ablation studies. The results show that while many pruning methods suffer significant performance drops at higher sparsity, approaches like Wanda, SparseGPT, and ADMM consistently preserve model quality under lower sparsity, suggesting greater robustness and practical viability. Note that the magnitude pruning curve is omitted from the lower subplot, as it consistently shows the worst degradation and dominates the y-axis range in zoomed-in views.**
+
 
 ---
 
 #### **Comparison of Unstructured and Semi-structured Pruning Methods**
 
-**Fig. 4: Comparison of the performance of unstructured and structured pruning methods on WikiText2 PPL at 50\% sparsity. The figure compares the perplexity (PPL) of various pruning methods for a model pruned to 50\% sparsity. The methods include unstructured pruning (50\%), and two types of structured pruning: 4:8 and 2:4, which indicate that 4 out of every 8 weights or 2 out of every 4 weights are pruned, respectively.**
 <div align="center">
 <img src="./assets/semi.svg" style="width: 100%;height: 150%">
 </div>
+
+**Fig. 4: Comparison of the performance of unstructured and structured pruning methods on WikiText2 PPL at 50\% sparsity. The figure compares the perplexity (PPL) of various pruning methods for a model pruned to 50\% sparsity. The methods include unstructured pruning (50\%), and two types of structured pruning: 4:8 and 2:4, which indicate that 4 out of every 8 weights or 2 out of every 4 weights are pruned, respectively.**
+
 
 **Table 2: WikiText2-PPL for different unstructured and semi-structured methods**
 
@@ -124,15 +130,18 @@ Coming soon.
 > To systematically evaluate the impact of model quantization on inference performance (PPL, inference speed, ARC-Easy, ARC-Challenge, and MMLU), we conducted comprehensive experiments on multiple models quantized via the GGUF framework. These experiments covered progressive quantization from 1-bit to 16-bit precision, focusing on well-performing yet moderately sized Qwen-2.5 model families (0.5B、1.5B，3B，7B，14B，32B，72B). Furthermore, given the remarkable performance recently exhibited by DeepSeek-R1, we also incorporated several DeepSeek-R1-distilled variants of LLaMA-3.1 and Qwen-2.5.
 > 
 
-**Fig. 5: Perplexity of 5 models across quantization levels. (a) PTB. (b) Wikitext2.**
 <div align="center">
 <img src="./assets/gptq.png" style="width: 100%;height: 100%">
 </div>
 
-**Fig. 6: The performance of the Qwen-2.5 model under various GGUF quantization schemes across multiple datasets and scales. This figure presents four subplots stacked vertically: (Top) WikiText2 perplexity (PPL), (Second) ARC-Easy accuracy, (Third) ARC-Challenge accuracy, (Bottom) MMLU accuracy. Results are shown across multiple model scales (0.5B, 1.5B, 3B, 7B, 14B, 32B, and 72B). These subplots demonstrate the performance trends of the Qwen-2.5 model under different quantization settings, helping to illustrate the impact of GGUF quantization on both perplexity and accuracy across a range of tasks and model sizes.**
+**Fig. 5: Perplexity of 5 models across quantization levels. (a) PTB. (b) Wikitext2.**
+
 <div align="center">
 <img src="./assets/quant_performance1-4.svg" style="width: 100%;height: 100%">
 </div>
+
+**Fig. 6: The performance of the Qwen-2.5 model under various GGUF quantization schemes across multiple datasets and scales. This figure presents four subplots stacked vertically: (Top) WikiText2 perplexity (PPL), (Second) ARC-Easy accuracy, (Third) ARC-Challenge accuracy, (Bottom) MMLU accuracy. Results are shown across multiple model scales (0.5B, 1.5B, 3B, 7B, 14B, 32B, and 72B). These subplots demonstrate the performance trends of the Qwen-2.5 model under different quantization settings, helping to illustrate the impact of GGUF quantization on both perplexity and accuracy across a range of tasks and model sizes.**
+
 
 **Table 4:Wikitext2-PPL results for various quantization methods with different bit configurations(2K).**
 
@@ -215,23 +224,28 @@ Coming soon.
 
 ### 🥇 Horizontal comparisons across different compression strategies
 🏁 We compare various model compression methods, including both pruning and quantization techniques, under a 50\% sparsity setting. The LLaMA2-7b model was tested on the WikiText2 dataset using Perplexity (PPL) as the performance metric. The results indicate that quantization outperforms pruning methods in terms of accuracy retention, with the ranking of performance being: Quantization > Unstructured Pruning > Semi-structured Pruning > Structured Pruning.
-**Fig. 7: Comparison of perplexity (PPL) for quantization and pruning methods at 50\% compression rate on Wikitext2. Lower PPL indicates better performance. Quantization outperforms all pruning strategies, with unstructured pruning showing moderate robustness compared to semi-structured and structured approaches.**
 <div align="center">
 <img src="./assets/quant_compare.svg" style="width: 100%;height: 100%">
 </div>
 
-**Fig. 8: High-compression regime (70\% sparsity or 4-bit quantization) performance on Wikitext2. Quantization (e.g., GGUF: 5.5 PPL) demonstrates exceptional precision retention, while unstructured pruning methods (e.g., wanda: 57.2 PPL) suffer significant degradation, highlighting the challenges of maintaining accuracy under extreme compression.**
+**Fig. 7: Comparison of perplexity (PPL) for quantization and pruning methods at 50\% compression rate on Wikitext2. Lower PPL indicates better performance. Quantization outperforms all pruning strategies, with unstructured pruning showing moderate robustness compared to semi-structured and structured approaches.**
+
 <div align="center">
 <img src="./assets/quant_compare2.svg" style="width: 100%;height: 100%">
 </div>
 
+**Fig. 8: High-compression regime (70\% sparsity or 4-bit quantization) performance on Wikitext2. Quantization (e.g., GGUF: 5.5 PPL) demonstrates exceptional precision retention, while unstructured pruning methods (e.g., wanda: 57.2 PPL) suffer significant degradation, highlighting the challenges of maintaining accuracy under extreme compression.**
+
+
 ### 🏆 Horizontal comparisons across different decoding strategies
 We evaluate the performance of various decoding strategies on nine models (7B–9B) using both closed-ended tasks (MBPP, GSM8K) and open-ended tasks (Wikinews). Our experimental setup closely follows the approach outlined by Shi et al.
 
-**Fig. 9: Performance of models under deterministic and stochastic decoding methods.**
 <div align="center">
 <img src="./assets/decoding.jpg" style="width: 100%;height: 100%">
 </div>
+
+**Fig. 9: Performance of models under deterministic and stochastic decoding methods.**
+
 
 ## 📌 Citation
 Please cite our paper if you find the repo helpful in your work:
