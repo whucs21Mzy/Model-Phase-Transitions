@@ -117,6 +117,13 @@ Coming soon.
 | ADMM                  | ****5.1292**** | <u>5.2079</u> | <u>5.3587</u> | <u>5.6827</u> | ****6.5338**** | 9.5521 | <u>25.6936</u> | <u>156.7145</u> | <u>10.0416</u> | <u>10.0416</u> |
 
 ### 🔨 Sensitivity to quantization
+
+<div align="center">
+<img src="./assets/quant.png" style="width: 100%;height: 100%">
+</div>
+
+**Fig. 5: GGUF progressive quantization with critical 3-bit threshold**
+
 #### Features
 🔍  **Lossless quantization thresholds**
 > Quantization exhibits a "safe compression zone" (critical 3-bit threshold), beyond which performance degrades nonlinearly—yet larger models retain superior performance under low-bit settings compared to smaller "full-scale" counterparts at the same memory footprint.
@@ -134,13 +141,13 @@ Coming soon.
 <img src="./assets/gptq.png" style="width: 100%;height: 100%">
 </div>
 
-**Fig. 5: Perplexity of 5 models across quantization levels. (a) PTB. (b) Wikitext2.**
+**Fig. 6: Perplexity of 5 models across quantization levels. (a) PTB. (b) Wikitext2.**
 
 <div align="center">
 <img src="./assets/quant_performance1-4.svg" style="width: 100%;height: 100%">
 </div>
 
-**Fig. 6: The performance of the Qwen-2.5 model under various GGUF quantization schemes across multiple datasets and scales. This figure presents four subplots stacked vertically: (Top) WikiText2 perplexity (PPL), (Second) ARC-Easy accuracy, (Third) ARC-Challenge accuracy, (Bottom) MMLU accuracy. Results are shown across multiple model scales (0.5B, 1.5B, 3B, 7B, 14B, 32B, and 72B). These subplots demonstrate the performance trends of the Qwen-2.5 model under different quantization settings, helping to illustrate the impact of GGUF quantization on both perplexity and accuracy across a range of tasks and model sizes.**
+**Fig. 7: The performance of the Qwen-2.5 model under various GGUF quantization schemes across multiple datasets and scales. This figure presents four subplots stacked vertically: (Top) WikiText2 perplexity (PPL), (Second) ARC-Easy accuracy, (Third) ARC-Challenge accuracy, (Bottom) MMLU accuracy. Results are shown across multiple model scales (0.5B, 1.5B, 3B, 7B, 14B, 32B, and 72B). These subplots demonstrate the performance trends of the Qwen-2.5 model under different quantization settings, helping to illustrate the impact of GGUF quantization on both perplexity and accuracy across a range of tasks and model sizes.**
 
 
 **Table 4:Wikitext2-PPL results for various quantization methods with different bit configurations(2K).**
@@ -228,13 +235,13 @@ Coming soon.
 <img src="./assets/quant_compare.svg" style="width: 100%;height: 100%">
 </div>
 
-**Fig. 7: Comparison of perplexity (PPL) for quantization and pruning methods at 50\% compression rate on Wikitext2. Lower PPL indicates better performance. Quantization outperforms all pruning strategies, with unstructured pruning showing moderate robustness compared to semi-structured and structured approaches.**
+**Fig. 8: Comparison of perplexity (PPL) for quantization and pruning methods at 50\% compression rate on Wikitext2. Lower PPL indicates better performance. Quantization outperforms all pruning strategies, with unstructured pruning showing moderate robustness compared to semi-structured and structured approaches.**
 
 <div align="center">
 <img src="./assets/quant_compare2.svg" style="width: 100%;height: 100%">
 </div>
 
-**Fig. 8: High-compression regime (70\% sparsity or 4-bit quantization) performance on Wikitext2. Quantization (e.g., GGUF: 5.5 PPL) demonstrates exceptional precision retention, while unstructured pruning methods (e.g., wanda: 57.2 PPL) suffer significant degradation, highlighting the challenges of maintaining accuracy under extreme compression.**
+**Fig. 9: High-compression regime (70\% sparsity or 4-bit quantization) performance on Wikitext2. Quantization (e.g., GGUF: 5.5 PPL) demonstrates exceptional precision retention, while unstructured pruning methods (e.g., wanda: 57.2 PPL) suffer significant degradation, highlighting the challenges of maintaining accuracy under extreme compression.**
 
 
 ### 🏆 Horizontal comparisons across different decoding strategies
@@ -244,7 +251,7 @@ We evaluate the performance of various decoding strategies on nine models (7B–
 <img src="./assets/decoding.jpg" style="width: 100%;height: 100%">
 </div>
 
-**Fig. 9: Performance of models under deterministic and stochastic decoding methods.**
+**Fig. 10: Performance of models under deterministic and stochastic decoding methods.**
 
 
 ## 📌 Citation
