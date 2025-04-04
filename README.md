@@ -119,7 +119,7 @@ Coming soon.
 ### 🔨 Sensitivity to quantization
 
 <div align="center">
-<img src="./assets/quant.png" style="width: 100%;height: 100%">
+<img src="./assets/quant.png" style="width: 70%;height: 70%">
 </div>
 
 **Fig. 5: GGUF progressive quantization with critical 3-bit threshold**
