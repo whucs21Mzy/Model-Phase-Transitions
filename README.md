@@ -1,25 +1,42 @@
 
 <div align="center">
-<img src="./assets/bleeding.png" style="width: 40%;height: 40%">
+<img src="./assets/logo.png" style="width: 40%;height: 40%">
 </div>
 
-# Model-Hemorrhage
-Model Hemorrhage and the Robustness Limits of Large Language  Models: A Perspective
+# Model-Phase-Transitions (MPT)
+Phase Transitions in Large Language Model Compression: A Perspective
 
-## 📜 Paper
-Our full paper is available on arXiv: [**Model Hemorrhage and the Robustness Limits of Large Language Models**](https://doi.org/10.48550/arXiv.2503.23924) [![Paper](https://img.shields.io/badge/Paper-%F0%9F%8E%93-lightblue?style=flat-square)](https://doi.org/10.48550/arXiv.2503.23924)
 
 ## 📬 Contact
 If you find any errors or have suggestions, feel free to reach out: **maziyang@whu.edu.cn**
 
-## 🏗️ The structural taxonomy for Model Hemorrhage.
+## 🏗️ The structural taxonomy for Model Phase Transitions.
 <div align="center">
-<img src="./assets/tree.jpg" style="width: 100%;height: 100%">
+<img src="./assets/fig1_Model Phase Transitions and Redundancy in Model Compression-1.png" style="width: 100%;height: 100%">
 </div>
 
 
 ## 🌐 About
-In our work, we introduce the concept of **Model Hemorrhage**, a comprehensive framework that investigates how optimization techniques—such as pruning, quantization, and decoding adaptations—can lead to unexpected degradation in performance and stability. Through empirical analysis and theoretical insights, we reveal five key dimensions of fragility in LLMs: **architectural redundancy**, **model compression**, **training-inference**, **extension mechanisms**, and **data-related vulnerabilities**. To ground this framework, we present empirical case studies that illuminate key trade-offs—including cardinal sparsity thresholds for pruning, lossless quantization thresholds, full-size progressive quantization, and horizontal comparisons across different compression strategies and decoding methods.
+In our work, we introduce the concept of **Model Phase Transition** to fundamentally characterize performance degradation and lossless compression limits in large language models. 
+
+## Key Concepts
+### 1. Model Redundancy  
+| Type | Compression Handle | Intuition |
+|------|--------------------|-----------|
+| **Structural** | Structured / un-structured pruning | Remove unimportant heads, channels or weights while residual pathways self-heal.
+| **Numerical** | Quantization | Most values lie in a narrow range; keep the outliers high-precision, down-sample the rest.
+| **Algebraic** | Low-rank decomposition | Weight matrices live in a low-energy sub-space; factorise into skinny matrices. |
+
+### 2. Model Phase Transition  
+> *“The difference between a robustly-compressed model and a broken one is a single step past the PTP.”*
+
+* **Definition** Gradual degradation up to a critical compression ratio **s₀**; exponential collapse beyond. Our piece-wise power-law + exponential curve fits 30 + methods.  
+* **Typical PTPs**  
+  * Structured pruning: **30–45 % sparsity**
+  * Unstructured pruning: **55–65 % sparsity**
+  * Quantization: **≥ 3-bit precision** to stay safe:contentReference
+  * Low-rank: **≥ 17–30 % sparsity**
+
 
 ## 📚 Papers
 Coming soon.
@@ -254,16 +271,3 @@ We evaluate the performance of various decoding strategies on nine models (7B–
 **Fig. 10: Performance of models under deterministic and stochastic decoding methods.**
 
 
-## 📌 Citation
-Please cite our paper if you find the repo helpful in your work:
-```
-@misc{ma2025modelhemorrhagerobustnesslimits,
-      title={Model Hemorrhage and the Robustness Limits of Large Language Models}, 
-      author={Ziyang Ma and Zuchao Li and Lefei Zhang and Gui-Song Xia and Bo Du and Liangpei Zhang and Dacheng Tao},
-      year={2025},
-      eprint={2503.23924},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2503.23924}, 
-}
-```
