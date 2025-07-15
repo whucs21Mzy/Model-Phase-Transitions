@@ -7,28 +7,29 @@
 Phase Transitions in Large Language Model Compression: A Perspective
 
 
+## 🌐 Introduction
+The increasing size and complexity of large language models (LLMs) present significant computational and memory challenges. To address these challenges, **model compression** techniques have been developed to reduce the resource demands of LLMs. However, compression techniques can exhibit **Model Phase Transitions (MPT)**, where the model's performance remains stable until a critical threshold is reached, after which the performance degrades sharply. The key to achieving effective compression lies in understanding **model redundancy**, which provides buffers that allow for compression until this phase transition point is reached.
+
+In our work, we introduce the concept of **Model Phase Transition** to fundamentally characterize performance degradation and lossless compression limits in large language models. Across more than thirty pruning, quantization, and low-rank decomposition techniques, we fit performance trajectories with a novel piecewise power-law–exponential curve that pinpoints each technique’s phase-transition point (PTP):  structured pruning fails at 30–45% sparsity, unstructured pruning at 55–65%, low-rank decomposition at 17–30%, and quantization below 3-bit precision. Crucially, these redundancy sources are orthogonal: by staying within the joint safe region defined by their PTPs, we raise the prior single-dimension bottleneck, enabling **lossless compression to 10% of original model size**.
+
 ## 📬 Contact
 If you find any errors or have suggestions, feel free to reach out: **maziyang@whu.edu.cn**
 
-## 🏗️ The structural taxonomy for Model Phase Transitions.
+## 🔍 Core Concept: Model Redundancy & Phase Transitions
 <div align="center">
 <img src="./assets/fig1_Model Phase Transitions and Redundancy in Model Compression-1.png" style="width: 100%;height: 100%">
 </div>
 
+### 🧱 Three Types of Model Redundancy
+Large Language Models (LLMs) exhibit inherent redundancies that enable compression:
+| Redundancy Type | Compression Technique | Description |
+|----------------|------------------------|-------------|
+| **Structural** | Pruning | Architectural properties allow component removal (e.g., attention heads, layers) without functional loss |
+| **Numerical** | Quantization | Heavy-tailed weight distributions permit precision reduction with minimal impact |
+| **Algebraic** | Low-Rank Decomposition | Weight matrices exhibit low-rank properties enabling matrix factorization |
 
-## 🌐 About
-In our work, we introduce the concept of **Model Phase Transition** to fundamentally characterize performance degradation and lossless compression limits in large language models. 
-
-## Key Concepts
-### 1. Model Redundancy  
-| Type | Compression Handle | Intuition |
-|------|--------------------|-----------|
-| **Structural** | Structured / un-structured pruning | Remove unimportant heads, channels or weights while residual pathways self-heal.
-| **Numerical** | Quantization | Most values lie in a narrow range; keep the outliers high-precision, down-sample the rest.
-| **Algebraic** | Low-rank decomposition | Weight matrices live in a low-energy sub-space; factorise into skinny matrices. |
-
-### 2. Model Phase Transition  
-> *“The difference between a robustly-compressed model and a broken one is a single step past the PTP.”*
+### ⚡️ Model Phase Transition (MPT) 
+> *“The difference between a robustly-compressed model and a broken one is a single step past the PTP（Phase Transition Point）.”*
 
 * **Definition** Gradual degradation up to a critical compression ratio **s₀**; exponential collapse beyond. Our piece-wise power-law + exponential curve fits 30 + methods.  
 * **Typical PTPs**  
@@ -36,6 +37,31 @@ In our work, we introduce the concept of **Model Phase Transition** to fundament
   * Unstructured pruning: **55–65 % sparsity**
   * Quantization: **≥ 3-bit precision** to stay safe:contentReference
   * Low-rank: **≥ 17–30 % sparsity**
+
+### Major Findings on MPT (Model Phase Transition) Research
+1. **Structured Pruning Phase Transition**
+<div align="center">
+<img src="./assets/fig2_Structured pruning phase transition.svg" style="width: 100%;height: 100%">
+</div>
+- This figure presents the perplexity (PPL) of several structured pruning methods across different sparsity ratios, including both experimental data and fitted curves. The stars indicate the turning points of the piecewise fitting curves, where the x-coordinate corresponds to the model’s phase transition point. As the sparsity ratio increases, the model's performance sharply degrades once the phase transition point is exceeded.
+
+2. **Unstructured Pruning Phase Transition**
+<div align="center">
+<img src="./assets/fig3_Unstructured pruning phase transition.svg" style="width: 100%;height: 100%">
+</div>
+- This figure shows the perplexity (PPL) of several unstructured pruning methods across different sparsity ratios, including both experimental data and fitted curves. The stars indicate the turning points of the piecewise fitting curves, where the x-coordinate corresponds to the model’s phase transition point. The performance remains stable at lower sparsity ratios, but once the critical threshold is crossed, performance degradation becomes exponential.
+
+3. **Quantized Model Performance**
+<div align="center">
+<img src="./assets/fig4_Quantized model performance.svg" style="width: 100%;height: 100%">
+</div>
+- This figure investigates the performance of quantized models on WikiText2 across various parameter sizes (GB). The performance is measured in perplexity (PPL), and several model families (Qwen2.5, LLaMA-2, and Gemma-3) are compared at different quantization levels. The results highlight a phase transition point where compression leads to catastrophic performance degradation at 2-bit quantization, with larger models showing better robustness as the model size increases.
+
+4. **Low-Rank Decomposition Phase Transition**
+<div align="center">
+<img src="./assets/appendix_fig.b1_Low-rank decomposition phase transition.svg" style="width: 100%;height: 100%">
+</div>
+- This figure presents the perplexity (PPL) of several low-rank decomposition methods (ASVD and SVD-LLM) across varying sparsity ratios. The experimental data and fitted curves demonstrate a clear phase transition where performance sharply drops beyond a certain sparsity threshold. The turning points of the piecewise fitting curves are marked with stars, which indicate critical points in the model’s performance degradation.
 
 
 ## 📚 Papers
