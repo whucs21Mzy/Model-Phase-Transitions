@@ -43,13 +43,13 @@ Large Language Models (LLMs) exhibit inherent redundancies that enable compressi
 <div align="center">
 <img src="./assets/fig2_Structured pruning phase transition.svg" style="width: 100%;height: 100%">
 </div>
-- This figure presents the perplexity (PPL) of several structured pruning methods across different sparsity ratios, including both experimental data and fitted curves. The stars indicate the turning points of the piecewise fitting curves, where the x-coordinate corresponds to the model’s phase transition point. As the sparsity ratio increases, the model's performance sharply degrades once the phase transition point is exceeded.
+This figure presents the perplexity (PPL) of several structured pruning methods across different sparsity ratios, including both experimental data and fitted curves. The stars indicate the turning points of the piecewise fitting curves, where the x-coordinate corresponds to the model’s phase transition point. As the sparsity ratio increases, the model's performance sharply degrades once the phase transition point is exceeded.
 
 2. **Unstructured Pruning Phase Transition**
 <div align="center">
 <img src="./assets/fig3_Unstructured pruning phase transition.svg" style="width: 100%;height: 100%">
 </div>
-- This figure shows the perplexity (PPL) of several unstructured pruning methods across different sparsity ratios, including both experimental data and fitted curves. The stars indicate the turning points of the piecewise fitting curves, where the x-coordinate corresponds to the model’s phase transition point. The performance remains stable at lower sparsity ratios, but once the critical threshold is crossed, performance degradation becomes exponential.
+This figure shows the perplexity (PPL) of several unstructured pruning methods across different sparsity ratios, including both experimental data and fitted curves. The stars indicate the turning points of the piecewise fitting curves, where the x-coordinate corresponds to the model’s phase transition point. The performance remains stable at lower sparsity ratios, but once the critical threshold is crossed, performance degradation becomes exponential.
 
 3. **Quantized Model Performance**
 <div align="center">
@@ -61,8 +61,15 @@ Large Language Models (LLMs) exhibit inherent redundancies that enable compressi
 <div align="center">
 <img src="./assets/appendix_fig.b1_Low-rank decomposition phase transition.svg" style="width: 100%;height: 100%">
 </div>
-- This figure presents the perplexity (PPL) of several low-rank decomposition methods (ASVD and SVD-LLM) across varying sparsity ratios. The experimental data and fitted curves demonstrate a clear phase transition where performance sharply drops beyond a certain sparsity threshold. The turning points of the piecewise fitting curves are marked with stars, which indicate critical points in the model’s performance degradation.
+This figure presents the perplexity (PPL) of several low-rank decomposition methods (ASVD and SVD-LLM) across varying sparsity ratios. The experimental data and fitted curves demonstrate a clear phase transition where performance sharply drops beyond a certain sparsity threshold. The turning points of the piecewise fitting curves are marked with stars, which indicate critical points in the model’s performance degradation.
 
+### Major Findings on Combined Pruning and Quantization
+**Combined Pruning and Quantization**
+<div align="center">
+<img src="./assets/fig5_Combined pruning and quantization.svg" style="width: 130%;height: 100%">
+</div>
+**Panel a** presents the results of combining GGUF quantization and Wanda pruning on the LLaMA2-7b model. The 3D surface plot (Panel a) illustrates how perplexity (PPL) varies across different pruning ratios and quantization levels. The figure shows how the performance degrades with increasing compression, with the surface becoming steeper beyond a certain threshold.
+In **Panel b**, the 2D contour projection highlights the best trade-off curve between model size and perplexity. The red line marks the minimal PPL achieved at equivalent compression ratios, while the orange curve shows the phase transition line (PTL), indicating the point beyond which model performance rapidly deteriorates.
 
 ## 📚 Papers
 Coming soon.
