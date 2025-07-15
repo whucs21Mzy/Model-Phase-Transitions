@@ -55,7 +55,7 @@ This figure shows the perplexity (PPL) of several unstructured pruning methods a
 <div align="center">
 <img src="./assets/fig4_Quantized model performance.svg" style="width: 100%;height: 100%">
 </div>
-- This figure investigates the performance of quantized models on WikiText2 across various parameter sizes (GB). The performance is measured in perplexity (PPL), and several model families (Qwen2.5, LLaMA-2, and Gemma-3) are compared at different quantization levels. The results highlight a phase transition point where compression leads to catastrophic performance degradation at 2-bit quantization, with larger models showing better robustness as the model size increases.
+This figure investigates the performance of quantized models on WikiText2 across various parameter sizes (GB). The performance is measured in perplexity (PPL), and several model families (Qwen2.5, LLaMA-2, and Gemma-3) are compared at different quantization levels. The results highlight a phase transition point where compression leads to catastrophic performance degradation at 2-bit quantization, with larger models showing better robustness as the model size increases.
 
 4. **Low-Rank Decomposition Phase Transition**
 <div align="center">
@@ -68,6 +68,7 @@ This figure presents the perplexity (PPL) of several low-rank decomposition meth
 <div align="center">
 <img src="./assets/fig5_Combined pruning and quantization.svg" style="width: 130%;height: 100%">
 </div>
+
 **Panel a** presents the results of combining GGUF quantization and Wanda pruning on the LLaMA2-7b model. The 3D surface plot (Panel a) illustrates how perplexity (PPL) varies across different pruning ratios and quantization levels. The figure shows how the performance degrades with increasing compression, with the surface becoming steeper beyond a certain threshold.
 In **Panel b**, the 2D contour projection highlights the best trade-off curve between model size and perplexity. The red line marks the minimal PPL achieved at equivalent compression ratios, while the orange curve shows the phase transition line (PTL), indicating the point beyond which model performance rapidly deteriorates.
 
