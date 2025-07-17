@@ -73,7 +73,54 @@ This figure presents the perplexity (PPL) of several low-rank decomposition meth
 In **Panel b**, the 2D contour projection highlights the best trade-off curve between model size and perplexity. The red line marks the minimal PPL achieved at equivalent compression ratios, while the orange curve shows the phase transition line (PTL), indicating the point beyond which model performance rapidly deteriorates.
 
 ## 📚 Papers
-Coming soon.
+### ✂️ Structured Pruning
+
+| Method | Venue | Paper | Code |
+|--------|-------|-------|------|
+| ⭐️ [SliceGPT](https://iclr.cc/virtual/2024/poster/17531) | ICLR'24 | SliceGPT: Compress Large Language Models by Deleting Rows and Columns | [GitHub](https://github.com/microsoft/TransformerCompression) |
+| [LLM-Pruner](https://proceedings.neurips.cc/paper_files/paper/2023/file/44956951349095f74492a5471128a7e0-Paper-Conference.pdf) | NeurIPS'23 | LLM-Pruner: On the Structural Pruning of Large Language Models | [GitHub](https://github.com/horseee/LLM-Pruner) |
+| [SLEB](https://dl.acm.org/doi/10.5555/3692070.3693946) | ICML'24 | Streamlining LLMs through Redundancy Verification and Elimination of Transformer Blocks | [GitHub](https://github.com/jiwonsong-dev/SLEB) |
+| [FLAP](https://ojs.aaai.org/index.php/AAAI/article/view/28960) | AAAI'24 | Fluctuation-based Adaptive Structured Pruning for LLMs | [GitHub](https://github.com/CASIA-IVA-Lab/FLAP) |
+| [ShortGPT](https://arxiv.org/pdf/2403.03853) | arXiv | Layers in LLMs are More Redundant Than You Expect | - |
+| [Sheared LLaMA](https://arxiv.org/abs/2310.06694) | arXiv | Accelerating LLM Pre-training via Structured Pruning | [GitHub](https://github.com/princeton-nlp/LLM-Shearing) |
+| [Shortened LLaMA](https://arxiv.org/abs/2402.02834) | ICLR'24 Workshop | Depth Pruning for LLMs | - |
+| [SRAD](https://iclr.cc/virtual/2025/poster/28400) | ICLR'25 | The Unreasonable Ineffectiveness of the Deeper Layers | - |
+| [LoRAPrune](https://aclanthology.org/2024.findings-acl.178/) | ACL'24 Findings | Structured Pruning Meets Low-Rank PEFT | [GitHub](https://github.com/aim-uofa/LoRAPrune) |
+
+### 🧨 Unstructured Pruning
+
+| Method | Venue | Paper | Code |
+|--------|-------|-------|------|
+| ⭐️ [Wanda](https://icml.cc/virtual/2023/28297) | ICML'23 | A Simple and Effective Pruning Approach for LLMs | [GitHub](https://eric-mingjie.github.io/wanda/home.html) |
+| ⭐️ [SparseGPT](https://dl.acm.org/doi/10.5555/3618408.3618822) | ICML'23 | Massive LLMs Can Be Accurately Pruned in One-Shot | [GitHub](https://github.com/ist-daslab/sparsegpt) |
+| ⭐️ [ADMM](https://arxiv.org/abs/2401.02938) | arXiv | Fast and Effective Weight Update for Pruned LLMs | [GitHub](https://github.com/fmfi-compbio/admm-pruning?tab=readme-ov-file) |
+| [OWL](https://dl.acm.org/doi/10.5555/3692070.3694428) | ICML'24 | Outlier Weighed Layerwise Sparsity (OWL) | [GitHub](https://github.com/luuyin/OWL) |
+| [RIA](https://iclr.cc/virtual/2024/poster/18549) | ICLR'24 | Plug-and-Play Post-training Pruning | [GitHub](https://github.com/biomedical-cybernetics/Relative-importance-and-activation-pruning) |
+| [DSnoT](https://iclr.cc/virtual/2024/poster/19572) | ICLR'24 | Training-Free Fine-tuning for Sparse LLMs | [GitHub](https://github.com/zyxxmu/DSnoT) |
+| [Flash-LLM](https://www.vldb.org/pvldb/vol17/p211-xia.pdf) | VLDB'24 | Efficient Inference with Unstructured Sparsity | [GitHub](https://github.com/AlibabaResearch/flash-llm) |
+| [BESA](https://iclr.cc/virtual/2024/poster/18153) | ICLR'24 | Blockwise Parameter-Efficient Sparsity Allocation | [GitHub](https://github.com/OpenGVLab/LLMPrune-BESA) |
+
+### 📦 Quantization
+
+| Method | Venue | Paper | Code |
+|--------|-------|-------|------|
+| [GPTQ](https://iclr.cc/virtual/2023/poster/10855) | ICLR'23 | Accurate Post-Training Quantization | [GitHub](https://github.com/IST-DASLab/gptq) |
+| [AWQ](https://mlsys.org/virtual/2024/poster/2653) | MLSys'24 | Activation-aware Weight Quantization | [GitHub](https://github.com/mit-han-lab/llm-awq) |
+| [SmoothQuant](https://icml.cc/virtual/2023/poster/25228) | ICML'23 | Accurate and Efficient PTQ for LLMs | [GitHub](https://github.com/mit-han-lab/smoothquant) |
+| [LLM.int8()](https://dl.acm.org/doi/10.5555/3600270.3602468) | NeurIPS'22 | 8-bit Matrix Multiplication at Scale | [GitHub](https://github.com/bitsandbytes-foundation/bitsandbytes) |
+| [QLoRA](https://dl.acm.org/doi/10.5555/3666122.3666563) | NeurIPS'23 | Efficient Finetuning of Quantized LLMs | [GitHub](https://github.com/artidoro/qlora) |
+| ⭐️ GGUF | - | - | [GitHub](https://github.com/ggml-org/llama.cpp) |
+
+### 🧩 Low-Rank Decomposition
+
+| Method | Venue | Paper | Code |
+|--------|-------|-------|------|
+| [ASVD](https://arxiv.org/html/2312.05821v1) | arXiv | Activation-aware SVD for Compressing LLMs | [GitHub](https://github.com/hahnyuan/ASVD4LLM) |
+| ⭐️ [SVD-LLM](https://iclr.cc/virtual/2025/poster/30003) | ICLR'25 | Truncation-aware SVD for LLMs | [GitHub](https://github.com/AIoT-MLSys-Lab/SVD-LLM) |
+| [LoSparse](https://dl.acm.org/doi/10.5555/3618408.3619247) | ICML'23 | Low-Rank & Sparse Approximation | [GitHub](https://github.com/yxli2123/LoSparse) |
+| [Lillama](https://aclanthology.org/2025.naacl-long.291/) | NAACL'25 | One-shot Compression via Local Feature Distillation | [GitHub](https://github.com/yaya-sy/lillama) |
+| [MoDeGPT](https://proceedings.iclr.cc/paper_files/paper/2025/hash/fb7214d2fdfd84165b08539d59c92e07-Abstract-Conference.html) | ICLR'25 | Modular Decomposition for LLM Compression | [GitHub](https://github.com/XinruiXiong/MoDeGPT) |
+
 
 ## 📊 Case Studies
 ### ✂ Sensitivity to Pruning
