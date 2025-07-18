@@ -537,7 +537,7 @@ This section examines synergistic effects of combined compression strategies. We
 ### 🥇 Horizontal comparisons across different compression strategies
 🏁 We compare various model compression methods, including both pruning and quantization techniques, under a 50\% sparsity setting. The LLaMA2-7b model was tested on the WikiText2 dataset using Perplexity (PPL) as the performance metric. The results indicate that quantization outperforms pruning methods in terms of accuracy retention, with the ranking of performance being: Quantization > Unstructured Pruning > Semi-structured Pruning > Structured Pruning  Low-Rank Decomposition.
 <div align="center">
-<img src=".assets/appendix_fig.d1_Comparative analysis of 30+ model compression approaches evaluating perplexity (PPL) on a log scale across two sparsity configurations..svg" style="width: 100%;height: 100%">
+<img src="./assets/appendix_fig.d1_Comparative analysis of 30+ model compression approaches evaluating perplexity (PPL) on a log scale across two sparsity configurations..svg" style="width: 100%;height: 100%">
 </div>
 
 **Fig. 9: Comparative analysis of model compression approaches evaluating perplexity (PPL) on a log scale across two sparsity configurations. Top: 50\% sparsity performance across four strategy types - quantization (PPL 5.4-5.8), unstructured pruning (PPL 5.9-14.9), semi-structured pruning (PPL 6.8-16.5), structured pruning (PPL 10.2-316.7), and low-rank decomposition (PPL 43.0-nan). Bottom: 4-bit quantization methods (PPL 5.5-5.8) versus 70\% unstructured pruning techniques (PPL 12.1-52.4k). Lower values indicate better language modeling capability retention, demonstrating quantization's stability versus pruning's extreme PPL variance at high sparsity.
