@@ -535,7 +535,7 @@ This section examines synergistic effects of combined compression strategies. We
 *Note: Each cell shows PPL (top) and relative model size (bottom) compared to the original FP16 model at 0% pruning.*  
 
 ### 🥇 Horizontal comparisons across different compression strategies
-🏁 We compare various model compression methods, including both pruning and quantization techniques, under a 50\% sparsity setting. The LLaMA2-7b model was tested on the WikiText2 dataset using Perplexity (PPL) as the performance metric. The results indicate that quantization outperforms pruning methods in terms of accuracy retention, with the ranking of performance being: Quantization > Unstructured Pruning > Semi-structured Pruning > Structured Pruning  Low-Rank Decomposition.
+🏁 We compare various model compression methods, including both pruning and quantization techniques, under a 50\% sparsity setting. The LLaMA2-7b model was tested on the WikiText2 dataset using Perplexity (PPL) as the performance metric. The results indicate that quantization outperforms pruning methods in terms of accuracy retention, with the ranking of performance being: Quantization > Unstructured Pruning > Semi-structured Pruning > Structured Pruning > Low-Rank Decomposition.
 <div align="center">
 <img src="./assets/appendix_fig.d1_Comparative analysis of 30+ model compression approaches evaluating perplexity (PPL) on a log scale across two sparsity configurations..svg" style="width: 100%;height: 100%">
 </div>
