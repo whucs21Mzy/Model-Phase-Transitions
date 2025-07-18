@@ -451,18 +451,6 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 
 ---
 
-**Table 7: WikiText2-PPL results for various quantization methods with different bit configurations (2K).**
-
-| Method       | 2bits  | 3bits  | 4bits  | 8bits  |
-|:-------------|:-------|:-------|:-------|:-------|
-| GPTQ         | 1784.16| 7.58   | 5.75   | *5.47* |
-| AWQ          | -      | <u>6.24</u>| <u>5.60</u>| -      |
-| GGUF         | **5.86**| **5.55**| **5.45**| **5.40**|
-| QLoRA_NF4    | -      | -      | 5.65   | -      |
-| QLoRA_FP4    | -      | -      | 5.77   | -      |
-| LLM.int8()   | -      | -      | -      | 5.50   |
-| SmothQuant w8a8| -      | -      | -      | 5.59   |
-
 
 ### 🥇 Horizontal comparisons across different compression strategies
 🏁 We compare various model compression methods, including both pruning and quantization techniques, under a 50\% sparsity setting. The LLaMA2-7b model was tested on the WikiText2 dataset using Perplexity (PPL) as the performance metric. The results indicate that quantization outperforms pruning methods in terms of accuracy retention, with the ranking of performance being: Quantization > Unstructured Pruning > Semi-structured Pruning > Structured Pruning.
