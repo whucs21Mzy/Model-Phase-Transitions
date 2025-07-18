@@ -75,7 +75,6 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 
 ## 📚 Papers
 ### ✂️ Structured Pruning
-### ✂️ Structured Pruning
 
 - ⭐️ **SliceGPT** ([ICLR'24](https://iclr.cc/virtual/2024/poster/17531))  
   _SliceGPT: Compress Large Language Models by Deleting Rows and Columns_  
@@ -322,6 +321,13 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 
 **Fig. 7: The performance of the Qwen-2.5 model under various GGUF quantization schemes across multiple datasets and scales. This figure presents four subplots stacked vertically: (Top) WikiText2 perplexity (PPL), (Second) ARC-Easy accuracy, (Third) ARC-Challenge accuracy, (Bottom) MMLU accuracy. Results are shown across multiple model scales (0.5B, 1.5B, 3B, 7B, 14B, 32B, and 72B). These subplots demonstrate the performance trends of the Qwen-2.5 model under different quantization settings, helping to illustrate the impact of GGUF quantization on both perplexity and accuracy across a range of tasks and model sizes.**
 
+<div align="center">
+  <img src="./assets/appendix_fig.a5_Comparison of PPL, ARC-Challenge, and MMLU Losses Across Different Bit Widths and Model Sizes for Various Model Families.svg" 
+       style="width: 100%; height: auto;" 
+       alt="Comparison of PPL, ARC-Challenge, and MMLU Losses Across Different Bit Widths and Model Sizes">
+</div>
+
+**Fig. 8: Impact of 2-bit quantization on PPL, ARC-Challenge accuracy, and MMLU accuracy across model scales for various model families (Gemma-3, LLaMA-2, Owner-2.5).**  
 
 **Table 4:Wikitext2-PPL results for various quantization methods with different bit configurations(2K).**
 
@@ -450,12 +456,29 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 |                                | Q2_K             | 30.69 ± 0.29| 0.66          |
 
 ---
+### Sensitivity to Low-Rank Decomposition
+🔍 **Critical compression thresholds**  
+In the domain of large language models, low-rank decomposition methods inherently offer limited compression ratios, as weight matrices in contemporary LLMs often exhibit near-full-rank characteristics. ASVD exhibits a phase transition at **17%** rank reduction; beyond this point, PPL degrades exponentially. SVD-LLM’s phase transition occurs at **30%**, indicating slightly higher compression tolerance but steeper collapse thereafter.
+
+**Table 7: Low-Rank Decomposition Results**
+
+| \textbf{ASVD \cite{asvd} Sparsity} | 0%   | 3%   | 5%   | 7%   | 10%  | 13%  | 15%  | 17%  | 20%  | 23%  | 25%   | 27%    |
+|-----------------------------------|------|------|------|------|------|------|------|------|------|------|-------|--------|
+| **WikiText2 PPL**                 | 5.45 | 5.52 | 5.56 | 5.67 | 5.92 | 6.40 | 6.89 | 7.70 | 9.73 | 17.20| 42.83 | 259.05 |
+| **PTB PPL**                       | 20.90| 22.56| 23.58| 26.19| 33.11| 49.30| 65.88| 93.67|144.23|230.25|550.54 |1248.51 |
+
+| \textbf{SVD-LLM \cite{svdllm} Sparsity} | 15%   | 20%   | 25%   | 30%   | 35%   | 40%   | 45%   | 50%   | 55%   | 60%    |
+|-----------------------------------------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
+| **WikiText2 PPL (seq=512)**             | 10.47 | 11.31 | 12.54 | 14.33 | 17.17 | 21.67 | 29.26 | 42.99 | 68.54 | 108.13 |
+
+
+
 
 ### Sensitivity to Combined Model Compression
 
 This section examines synergistic effects of combined compression strategies. We employ LLaMA2-7B as the unified testbed across all experiments.
 
-#### Table 7: WikiText2-PPL for ASVD + RTN Quantization (Low-rank decomposition + Quantization)
+#### Table 8: WikiText2-PPL for ASVD + RTN Quantization (Low-rank decomposition + Quantization)
 
 | Pruning Ratio (%) | FP16 (Wikitext2 / PTB) | RTN_INT8 (Wikitext2 / PTB) | RTN_INT6 (Wikitext2 / PTB) |
 |-------------------|-------------------------|----------------------------|----------------------------|
@@ -472,7 +495,7 @@ This section examines synergistic effects of combined compression strategies. We
 | 25                | 42.828 / 550.543        | 43.161 / 558.946           | 47.348 / 696.396           |
 | 27                | 259.052 / 1248.507      | 255.688 / 1256.895         | 231.828 / 1262.418         |
 
-#### Table 8: WikiText2-PPL for SparseGPT + GPTQ Quantization (Unstructured pruning + Quantization)
+#### Table 9: WikiText2-PPL for SparseGPT + GPTQ Quantization (Unstructured pruning + Quantization)
 
 | Pruning Ratio | Budget / PPL (FP16) | Budget / PPL (8-bit) | Budget / PPL (4-bit) | Budget / PPL (3-bit) |
 |---------------|---------------------|----------------------|----------------------|----------------------|
@@ -488,7 +511,7 @@ This section examines synergistic effects of combined compression strategies. We
 | 75%           | 25.00% / 26.6704    | 12.40% / 26.9113     | 7.20% / 31.8896      | 5.70% / 44.8067      |
 | 80%           | 20.00% / 49.1943    | 10.00% / 50.8971     | 5.70% / 58.9694      | 4.50% / 109.4458     |
 
-#### Table 9: WikiText2-PPL for Wanda Pruning + GGUF Quantization (Unstructured pruning + Quantization)
+#### Table 10: WikiText2-PPL for Wanda Pruning + GGUF Quantization (Unstructured pruning + Quantization)
 
 | Pruning Ratio | FP16 (Dense)   | Q8_0 (size)        | Q6_K (size)        | Q5_K_M (size)      | Q4_K_M (size)      | Q3_K_M (size)      | Q2_K (size)       |
 |---------------|----------------|--------------------|--------------------|--------------------|--------------------|--------------------|-------------------|
@@ -512,17 +535,9 @@ This section examines synergistic effects of combined compression strategies. We
 *Note: Each cell shows PPL (top) and relative model size (bottom) compared to the original FP16 model at 0% pruning.*  
 
 ### 🥇 Horizontal comparisons across different compression strategies
-🏁 We compare various model compression methods, including both pruning and quantization techniques, under a 50\% sparsity setting. The LLaMA2-7b model was tested on the WikiText2 dataset using Perplexity (PPL) as the performance metric. The results indicate that quantization outperforms pruning methods in terms of accuracy retention, with the ranking of performance being: Quantization > Unstructured Pruning > Semi-structured Pruning > Structured Pruning.
+🏁 We compare various model compression methods, including both pruning and quantization techniques, under a 50\% sparsity setting. The LLaMA2-7b model was tested on the WikiText2 dataset using Perplexity (PPL) as the performance metric. The results indicate that quantization outperforms pruning methods in terms of accuracy retention, with the ranking of performance being: Quantization > Unstructured Pruning > Semi-structured Pruning > Structured Pruning  Low-Rank Decomposition.
 <div align="center">
-<img src="./assets/quant_compare.svg" style="width: 100%;height: 100%">
+<img src="./appendix_fig.d1_Comparative analysis of 30+ model compression approaches evaluating perplexity (PPL) on a log scale across two sparsity configurations..svg" style="width: 100%;height: 100%">
 </div>
 
-**Fig. 8: Comparison of perplexity (PPL) for quantization and pruning methods at 50\% compression rate on Wikitext2. Lower PPL indicates better performance. Quantization outperforms all pruning strategies, with unstructured pruning showing moderate robustness compared to semi-structured and structured approaches.**
-
-<div align="center">
-<img src="./assets/quant_compare2.svg" style="width: 100%;height: 100%">
-</div>
-
-**Fig. 9: High-compression regime (70\% sparsity or 4-bit quantization) performance on Wikitext2. Quantization (e.g., GGUF: 5.5 PPL) demonstrates exceptional precision retention, while unstructured pruning methods (e.g., wanda: 57.2 PPL) suffer significant degradation, highlighting the challenges of maintaining accuracy under extreme compression.**
-
-
+**Fig. 9: Comparative analysis of model compression approaches evaluating perplexity (PPL) on a log scale across two sparsity configurations. Top: 50\% sparsity performance across four strategy types - quantization (PPL 5.4-5.8), unstructured pruning (PPL 5.9-14.9), semi-structured pruning (PPL 6.8-16.5), structured pruning (PPL 10.2-316.7), and low-rank decomposition (PPL 43.0-nan). Bottom: 4-bit quantization methods (PPL 5.5-5.8) versus 70\% unstructured pruning techniques (PPL 12.1-52.4k). Lower values indicate better language modeling capability retention, demonstrating quantization's stability versus pruning's extreme PPL variance at high sparsity.
