@@ -41,7 +41,7 @@ If you find any errors or have suggestions, feel free to reach out: **maziyang@w
     - [Features](#features-1)
   - [Sensitivity to Low-Rank Decomposition](#sensitivity-to-low-rank-decomposition)
       - [Features](#features-2)
-  - [⭐️ Sensitivity to Combined Model Compression](#-sensitivity-to-combined-model-compression)
+  - [⭐️ Sensitivity to Combined Model Compression](#sensitivity-to-combined-model-compression)
   - [🥇 Horizontal comparisons across different compression strategies](#-horizontal-comparisons-across-different-compression-strategies)
 - [Datasets](#datasets)
 
@@ -514,7 +514,7 @@ In the domain of large language models, low-rank decomposition methods inherentl
 
 
 
-### ⭐️ Sensitivity to Combined Model Compression
+### Sensitivity to Combined Model Compression
 
 This section examines synergistic effects of combined compression strategies. We employ LLaMA2-7B as the unified testbed across all experiments.
 
