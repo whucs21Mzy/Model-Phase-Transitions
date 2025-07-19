@@ -15,6 +15,40 @@ In our work, we introduce the concept of **Model Phase Transition** to fundament
 ## 📬 Contact
 If you find any errors or have suggestions, feel free to reach out: **maziyang@whu.edu.cn**
 
+## 📖 Table of Contents
+
+-   [🌐 Introduction](#🌐-introduction)
+-   [📬 Contact](#📬-contact)
+-   [🔍 Core Concept: Model Redundancy & Phase Transitions](#🔍-core-concept-model-redundancy--phase-transitions)
+    -   [🧱 Three Types of Model Redundancy](#🧱-three-types-of-model-redundancy)
+    -   [⚡️ Model Phase Transition (MPT)](#⚡️-model-phase-transition-mpt)
+    -   [Major Findings on MPT (Model Phase Transition) Research](#major-findings-on-mpt-model-phase-transition-research)
+    -   [Major Findings on Combined Pruning and Quantization](#major-findings-on-combined-pruning-and-quantization)
+-   [📚 Papers](#📚-papers)
+    -   [💡 The Necessity of Low-Resource LLM Deployment](#💡-the-necessity-of-low-resource-llm-deployment)
+    -   [✂️ Structured Pruning](#✂️-structured-pruning)
+    -   [🧨 Unstructured Pruning](#🧨-unstructured-pruning)
+    -   [📦 Quantization](#📦-quantization)
+    -   [🧩 Low-Rank Decomposition](#🧩-low-rank-decomposition)
+-   [📊 Case Studies](#📊-case-studies)
+    -   [✂ Sensitivity to Pruning](#✂-sensitivity-to-pruning)
+        -   [Features](#features)
+        -   [Experimental Evaluation of Structured Pruning Methods Results](#experimental-evaluation-of-structured-pruning-methods-results)
+        -   [Experimental Evaluation of Unstructured Pruning Methods Results](#experimental-evaluation-of-unstructured-pruning-methods-results)
+        -   [Comparison of Unstructured and Semi-structured Pruning Methods](#comparison-of-unstructured-and-semi-structured-pruning-methods)
+    -   [🔨 Sensitivity to quantization](#🔨-sensitivity-to-quantization)
+        -   [Features](#features-1)
+    -   [Sensitivity to Low-Rank Decomposition](#sensitivity-to-low-rank-decomposition)
+    -   [Sensitivity to Combined Model Compression](#sensitivity-to-combined-model-compression)
+    -   [🥇 Horizontal comparisons across different compression strategies](#🥇-horizontal-comparisons-across-different-compression-strategies)
+-   [Datasets](#datasets)
+    -   [Wikitext-2](#wikitext-2)
+    -   [PTB (Penn Treebank)](#ptb-penn-treebank)
+    -   [C4 (Colossal Clean Crawled Corpus)](#c4-colossal-clean-crawled-corpus)
+    -   [MMLU (Massive Multitask Language Understanding)](#mmlu-massive-multitask-language-understanding)
+    -   [ARC-Challenge](#arc-challenge)
+    -   [ARC-Easy](#arc-easy)
+
 ## 🔍 Core Concept: Model Redundancy & Phase Transitions
 <div align="center">
 <img src="./assets/fig1_Model Phase Transitions and Redundancy in Model Compression-1.png" style="width: 100%;height: 100%">
