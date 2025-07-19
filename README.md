@@ -15,7 +15,6 @@ In our work, we introduce the concept of **Model Phase Transition** to fundament
 ## 📬 Contact
 If you find any errors or have suggestions, feel free to reach out: **maziyang@whu.edu.cn**
 
----
 
 ## 📖 Table of Contents
 
@@ -45,7 +44,7 @@ If you find any errors or have suggestions, feel free to reach out: **maziyang@w
   - [⭐️ Sensitivity to Combined Model Compression](#⭐️-sensitivity-to-combined-model-compression)
   - [🥇 Horizontal comparisons across different compression strategies](#🥇-horizontal-comparisons-across-different-compression-strategies)
 - [Datasets](#datasets)
----
+
 
 ## 🔍 Core Concept: Model Redundancy & Phase Transitions
 <div align="center">
@@ -95,7 +94,7 @@ This figure investigates the performance of quantized models on WikiText2 across
 </div>
 This figure presents the perplexity (PPL) of several low-rank decomposition methods (ASVD and SVD-LLM) across varying sparsity ratios. The experimental data and fitted curves demonstrate a clear phase transition where performance sharply drops beyond a certain sparsity threshold. The turning points of the piecewise fitting curves are marked with stars, which indicate critical points in the model’s performance degradation.
 
-###⭐️ Major Findings on Combined Pruning and Quantization
+### Major Findings on Combined Pruning and Quantization
 **Combined Pruning and Quantization**
 <div align="center">
 <img src="./assets/fig5_Combined pruning and quantization.svg" style="width: 130%;height: 100%">
@@ -106,14 +105,13 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 
 
 ## 📚 Papers
-
 ### 💡 The Necessity of Low-Resource LLM Deployment
 - ⭐️ [Nature Machine Intelligence](https://www.nature.com/articles/s42256-023-00626-4#peer-review)  
   _Parameter-efficient fine-tuning of large-scale pre-trained language models_
 
 - ⭐️ [Nature Communications](https://www.nature.com/articles/s41467-025-61040-5)  
   _Efficient GPT-4V level multimodal large language model for deployment on edge devices_
-  
+
 ### ✂️ Structured Pruning
 
 - ⭐️ **SliceGPT** ([ICLR'24](https://iclr.cc/virtual/2024/poster/17531))  
@@ -237,7 +235,7 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 
 
 ## 📊 Case Studies
-### ✂ Sensitivity to Pruning
+### Sensitivity to Pruning
 #### Features
 🔍 **Cardinal sparsity thresholds for pruning**
 > Pruning methods across different categories have specific **cardinal sparsity** thresholds that greatly affect their performance.
@@ -328,7 +326,7 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 | SparseGPT_owl         | 5.5043 | 5.6054 | 5.8055 | 6.1986 | 7.1123 | <u>9.4483</u> | ****20.963**** | ****136.4502**** | 10.5258 | - |
 | ADMM                  | ****5.1292**** | <u>5.2079</u> | <u>5.3587</u> | <u>5.6827</u> | ****6.5338**** | 9.5521 | <u>25.6936</u> | <u>156.7145</u> | <u>10.0416</u> | <u>10.0416</u> |
 
-### 🔨 Sensitivity to quantization
+### Sensitivity to quantization
 
 <div align="center">
 <img src="./assets/quant.png" style="width: 70%;height: 70%">
@@ -497,6 +495,8 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 
 ---
 ### Sensitivity to Low-Rank Decomposition
+#### Features
+
 🔍 **Critical compression thresholds**  
 In the domain of large language models, low-rank decomposition methods inherently offer limited compression ratios, as weight matrices in contemporary LLMs often exhibit near-full-rank characteristics. ASVD exhibits a phase transition at **17%** rank reduction; beyond this point, PPL degrades exponentially. SVD-LLM’s phase transition occurs at **30%**, indicating slightly higher compression tolerance but steeper collapse thereafter.
 
@@ -514,7 +514,7 @@ In the domain of large language models, low-rank decomposition methods inherentl
 
 
 
-###⭐️ Sensitivity to Combined Model Compression
+### ⭐️ Sensitivity to Combined Model Compression
 
 This section examines synergistic effects of combined compression strategies. We employ LLaMA2-7B as the unified testbed across all experiments.
 
@@ -575,12 +575,13 @@ This section examines synergistic effects of combined compression strategies. We
 *Note: Each cell shows PPL (top) and relative model size (bottom) compared to the original FP16 model at 0% pruning.*  
 
 ### 🥇 Horizontal comparisons across different compression strategies
-🏁 We compare various model compression methods, including both pruning and quantization techniques, under a 50\% sparsity setting. The LLaMA2-7b model was tested on the WikiText2 dataset using Perplexity (PPL) as the performance metric. The results indicate that quantization outperforms pruning methods in terms of accuracy retention, with the ranking of performance being: Quantization > Unstructured Pruning > Semi-structured Pruning > Structured Pruning > Low-Rank Decomposition.
+🏁 We compare various model compression methods, including both pruning and quantization techniques, under a 50\% sparsity setting. The LLaMA2-7b model was tested on the WikiText2 dataset using Perplexity (PPL) as the performance metric. The results indicate that quantization outperforms pruning methods in terms of accuracy retention, with the ranking of performance being: Quantization > Unstructured Pruning > Semi-structured Pruning > Structured Pruning  Low-Rank Decomposition.
 <div align="center">
 <img src="./assets/appendix_fig.d1_Comparative analysis of 30+ model compression approaches evaluating perplexity (PPL) on a log scale across two sparsity configurations..svg" style="width: 100%;height: 100%">
 </div>
 
 **Fig. 9: Comparative analysis of model compression approaches evaluating perplexity (PPL) on a log scale across two sparsity configurations. Top: 50\% sparsity performance across four strategy types - quantization (PPL 5.4-5.8), unstructured pruning (PPL 5.9-14.9), semi-structured pruning (PPL 6.8-16.5), structured pruning (PPL 10.2-316.7), and low-rank decomposition (PPL 43.0-nan). Bottom: 4-bit quantization methods (PPL 5.5-5.8) versus 70\% unstructured pruning techniques (PPL 12.1-52.4k). Lower values indicate better language modeling capability retention, demonstrating quantization's stability versus pruning's extreme PPL variance at high sparsity.
+
 
 
 ## Datasets
