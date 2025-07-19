@@ -91,7 +91,7 @@ This figure investigates the performance of quantized models on WikiText2 across
 </div>
 This figure presents the perplexity (PPL) of several low-rank decomposition methods (ASVD and SVD-LLM) across varying sparsity ratios. The experimental data and fitted curves demonstrate a clear phase transition where performance sharply drops beyond a certain sparsity threshold. The turning points of the piecewise fitting curves are marked with stars, which indicate critical points in the model’s performance degradation.
 
-### Major Findings on Combined Pruning and Quantization
+###⭐️ Major Findings on Combined Pruning and Quantization
 **Combined Pruning and Quantization**
 <div align="center">
 <img src="./assets/fig5_Combined pruning and quantization.svg" style="width: 130%;height: 100%">
@@ -510,7 +510,7 @@ In the domain of large language models, low-rank decomposition methods inherentl
 
 
 
-### Sensitivity to Combined Model Compression
+###⭐️ Sensitivity to Combined Model Compression
 
 This section examines synergistic effects of combined compression strategies. We employ LLaMA2-7B as the unified testbed across all experiments.
 
