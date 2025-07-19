@@ -74,6 +74,14 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 
 
 ## 📚 Papers
+
+### 💡 The Necessity of Low-Resource LLM Deployment
+- ⭐️ [Nature Machine Intelligence](https://www.nature.com/articles/s42256-023-00626-4#peer-review)  
+  _Parameter-efficient fine-tuning of large-scale pre-trained language models_
+
+- ⭐️ [Nature Communications](https://www.nature.com/articles/s41467-025-61040-5)  
+  _Efficient GPT-4V level multimodal large language model for deployment on edge devices_
+  
 ### ✂️ Structured Pruning
 
 - ⭐️ **SliceGPT** ([ICLR'24](https://iclr.cc/virtual/2024/poster/17531))  
