@@ -22,7 +22,7 @@ If you find any errors or have suggestions, feel free to reach out: **maziyang@w
 - [📬 Contact](#-contact)
 - [🔍 Core Concept: Model Redundancy & Phase Transitions](#-core-concept-model-redundancy--phase-transitions)
   - [🧱 Three Types of Model Redundancy](#-three-types-of-model-redundancy)
-  - [⚡️ Model Phase Transition (MPT)](https://github.com/whucs21Mzy/Model-Phase-Transitions/edit/main/README.md#%EF%B8%8F-model-phase-transition-mpt)
+  - [⚡️ Model Phase Transition (MPT)](https://github.com/whucs21Mzy/Model-Phase-Transitions/tree/main?tab=readme-ov-file#%EF%B8%8F-model-phase-transition-mpt)
   - [Major Findings on MPT (Model Phase Transition) Research](#major-findings-on-mpt-model-phase-transition-research)
   - [⭐️ Major Findings on Combined Pruning and Quantization](#major-findings-on-combined-pruning-and-quantization)
 - [📚 Papers](#-papers)
