@@ -549,3 +549,30 @@ This section examines synergistic effects of combined compression strategies. We
 </div>
 
 **Fig. 9: Comparative analysis of model compression approaches evaluating perplexity (PPL) on a log scale across two sparsity configurations. Top: 50\% sparsity performance across four strategy types - quantization (PPL 5.4-5.8), unstructured pruning (PPL 5.9-14.9), semi-structured pruning (PPL 6.8-16.5), structured pruning (PPL 10.2-316.7), and low-rank decomposition (PPL 43.0-nan). Bottom: 4-bit quantization methods (PPL 5.5-5.8) versus 70\% unstructured pruning techniques (PPL 12.1-52.4k). Lower values indicate better language modeling capability retention, demonstrating quantization's stability versus pruning's extreme PPL variance at high sparsity.
+
+
+## Datasets
+
+### Wikitext-2
+- **Description**: Wikitext-2 is a dataset derived from English Wikipedia and is often used for language modeling tasks. It consists of a subset of Wikipedia articles, providing a rich source of information for training machine learning models.
+- **Link**: [Wikitext-2 on Hugging Face](https://huggingface.co/datasets/Salesforce/wikitext)
+
+### PTB (Penn Treebank)
+- **Description**: PTB is one of the most widely used datasets for language modeling and syntactic parsing. It contains a diverse range of English texts, including articles from the Wall Street Journal, and is commonly used to evaluate models for part-of-speech tagging, syntactic parsing, and language modeling.
+- **Link**: [PTB on Hugging Face](https://huggingface.co/datasets/ptb-text-only/ptb_text_only)
+
+### C4 (Colossal Clean Crawled Corpus)
+- **Description**: C4 is a large-scale dataset built by scraping and cleaning web data. It is one of the most popular datasets for training models for various NLP tasks such as text generation, summarization, and question answering. The dataset is derived from web pages and contains a diverse range of information.
+- **Link**: [C4 on Hugging Face](https://huggingface.co/datasets/allenai/c4)
+
+### MMLU (Massive Multitask Language Understanding)
+- **Description**: MMLU is a benchmark dataset for evaluating a model’s ability to handle a wide range of tasks across multiple domains. It includes tasks related to science, math, humanities, and social science, and is used to evaluate the generalization capabilities of language models.
+- **Link**: [MMLU on Hugging Face](https://huggingface.co/datasets/cais/mmlu)
+
+### ARC-Challenge
+- **Description**: ARC-Challenge is a dataset designed for evaluating models on challenging multiple-choice questions. It is part of the AI2 Reasoning Challenge and focuses on science questions requiring advanced reasoning.
+- **Link**: [ARC-Challenge on Hugging Face](https://huggingface.co/datasets/allenai/ai2_arc)
+
+### ARC-Easy
+- **Description**: ARC-Easy is another dataset from the AI2 Reasoning Challenge, designed with relatively simpler science questions compared to ARC-Challenge. It is meant for evaluating how well models handle straightforward reasoning tasks in the science domain.
+- **Link**: [ARC-Easy on Hugging Face](https://huggingface.co/datasets/allenai/ai2_arc)
