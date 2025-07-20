@@ -44,7 +44,7 @@ If you find any errors or have suggestions, feel free to reach out: **maziyang@w
   - [⭐️ Sensitivity to Combined Model Compression](#sensitivity-to-combined-model-compression)
   - [🥇 Horizontal comparisons across different compression strategies](#-horizontal-comparisons-across-different-compression-strategies)
 - [Datasets](#datasets)
-
+- [Main Models Used](#main-models-used)
 
 ## 🔍 Core Concept: Model Redundancy & Phase Transitions
 <div align="center">
@@ -609,3 +609,24 @@ This section examines synergistic effects of combined compression strategies. We
 ### ARC-Easy
 - **Description**: ARC-Easy is another dataset from the AI2 Reasoning Challenge, designed with relatively simpler science questions compared to ARC-Challenge. It is meant for evaluating how well models handle straightforward reasoning tasks in the science domain.
 - **Link**: [ARC-Easy on Hugging Face](https://huggingface.co/datasets/allenai/ai2_arc)
+
+## Main Models Used
+
+Below are the primary models used in this project:
+
+- **LLaMA-2-70B**: [meta-llama/Llama-2-70b · Hugging Face](https://huggingface.co/meta-llama/Llama-2-70b)
+- **LLaMA-2-13B**: [meta-llama/Llama-2-13b-chat-hf · Hugging Face](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf)
+- **LLaMA-2-7B**: [meta-llama/Llama-2-7b · Hugging Face](https://huggingface.co/meta-llama/Llama-2-7b)
+- **LLaMA-3.1-8B-Instruct**: [meta-llama/Llama-3.1-8B-Instruct · Hugging Face](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct)
+- **Qwen2.5-72B-Instruct**: [Qwen/Qwen2.5-72B-Instruct · Hugging Face](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct)
+- **Qwen2.5-32B-Instruct**: [Qwen/Qwen2.5-32B-Instruct · Hugging Face](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct)
+- **Qwen2.5-14B-Instruct**: [Qwen/Qwen2.5-14B-Instruct · Hugging Face](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct)
+- **Qwen2.5-7B-Instruct**: [Qwen/Qwen2.5-7B-Instruct · Hugging Face](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct)
+- **Qwen2.5-3B-Instruct**: [Qwen/Qwen2.5-3B-Instruct · Hugging Face](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct)
+- **Qwen2.5-1.5B-Instruct**: [Qwen/Qwen2.5-1.5B-Instruct · Hugging Face](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct)
+- **Qwen2.5-0.5B-Instruct**: [Qwen/Qwen2.5-0.5B-Instruct · Hugging Face](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct)
+- **Gemma-3-27b-it**: [google/gemma-3-27b-it · Hugging Face](https://huggingface.co/google/gemma-3-27b-it)
+- **Gemma-3-12b-it**: [google/gemma-3-12b-it · Hugging Face](https://huggingface.co/google/gemma-3-12b-it)
+- **Gemma-3-4b-it**: [google/gemma-3-4b-it · Hugging Face](https://huggingface.co/google/gemma-3-4b-it)
+- **Gemma-3-1b-it**: [google/gemma-3-1b-it · Hugging Face](https://huggingface.co/google/gemma-3-1b-it)
+- **OPT-6.7B**: [facebook/opt-6.7b · Hugging Face](https://huggingface.co/facebook/opt-6.7b)
