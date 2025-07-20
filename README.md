@@ -50,6 +50,7 @@ If you find any errors or have suggestions, feel free to reach out: **maziyang@w
 <div align="center">
 <img src="./assets/fig1_Model Phase Transitions and Redundancy in Model Compression-1.png" style="width: 100%;height: 100%">
 </div>
+Fig. 1: This figure highlights three main types of redundancy: structural, numerical, and algebraic redundancy. Structural redundancy is managed through pruning, numerical redundancy through quantization, and algebraic redundancy through low-rank decomposition. These redundancies act as buffers, allowing for lossless model compression until the phase transition point is reached. The phase transition point remains stable when different types of compression methods are used together, enabling lossless compression of large models to about 10\% of their original size.
 
 ### 🧱 Three Types of Model Redundancy
 Large Language Models (LLMs) exhibit inherent redundancies that enable compression:
@@ -74,25 +75,26 @@ Large Language Models (LLMs) exhibit inherent redundancies that enable compressi
 <div align="center">
 <img src="./assets/fig2_Structured pruning phase transition.svg" style="width: 100%;height: 100%">
 </div>
-This figure presents the perplexity (PPL) of several structured pruning methods across different sparsity ratios, including both experimental data and fitted curves. The stars indicate the turning points of the piecewise fitting curves, where the x-coordinate corresponds to the model’s phase transition point. As the sparsity ratio increases, the model's performance sharply degrades once the phase transition point is exceeded.
+Fig. 2: This figure presents the perplexity (PPL) of several structured pruning methods across different sparsity ratios, including both experimental data and fitted curves. The stars indicate the turning points of the piecewise fitting curves, where the x-coordinate corresponds to the model’s phase transition point. As the sparsity ratio increases, the model's performance sharply degrades once the phase transition point is exceeded.
 
 2. **Unstructured Pruning Phase Transition**
 <div align="center">
 <img src="./assets/fig3_Unstructured pruning phase transition.svg" style="width: 100%;height: 100%">
 </div>
-This figure shows the perplexity (PPL) of several unstructured pruning methods across different sparsity ratios, including both experimental data and fitted curves. The stars indicate the turning points of the piecewise fitting curves, where the x-coordinate corresponds to the model’s phase transition point. The performance remains stable at lower sparsity ratios, but once the critical threshold is crossed, performance degradation becomes exponential.
+
+Fig. 3: This figure shows the perplexity (PPL) of several unstructured pruning methods across different sparsity ratios, including both experimental data and fitted curves. The stars indicate the turning points of the piecewise fitting curves, where the x-coordinate corresponds to the model’s phase transition point. The performance remains stable at lower sparsity ratios, but once the critical threshold is crossed, performance degradation becomes exponential.
 
 3. **Quantized Model Performance**
 <div align="center">
 <img src="./assets/fig4_Quantized model performance.svg" style="width: 100%;height: 100%">
 </div>
-This figure investigates the performance of quantized models on WikiText2 across various parameter sizes (GB). The performance is measured in perplexity (PPL), and several model families (Qwen2.5, LLaMA-2, and Gemma-3) are compared at different quantization levels. The results highlight a phase transition point where compression leads to catastrophic performance degradation at 2-bit quantization, with larger models showing better robustness as the model size increases.
+Fig. 4: This figure investigates the performance of quantized models on WikiText2 across various parameter sizes (GB). The performance is measured in perplexity (PPL), and several model families (Qwen2.5, LLaMA-2, and Gemma-3) are compared at different quantization levels. The results highlight a phase transition point where compression leads to catastrophic performance degradation at 2-bit quantization, with larger models showing better robustness as the model size increases.
 
 4. **Low-Rank Decomposition Phase Transition**
 <div align="center">
 <img src="./assets/appendix_fig.b1_Low-rank decomposition phase transition.svg" style="width: 100%;height: 100%">
 </div>
-This figure presents the perplexity (PPL) of several low-rank decomposition methods (ASVD and SVD-LLM) across varying sparsity ratios. The experimental data and fitted curves demonstrate a clear phase transition where performance sharply drops beyond a certain sparsity threshold. The turning points of the piecewise fitting curves are marked with stars, which indicate critical points in the model’s performance degradation.
+Fig. 5: This figure presents the perplexity (PPL) of several low-rank decomposition methods (ASVD and SVD-LLM) across varying sparsity ratios. The experimental data and fitted curves demonstrate a clear phase transition where performance sharply drops beyond a certain sparsity threshold. The turning points of the piecewise fitting curves are marked with stars, which indicate critical points in the model’s performance degradation.
 
 ### Major Findings on Combined Pruning and Quantization
 **Combined Pruning and Quantization**
@@ -100,7 +102,7 @@ This figure presents the perplexity (PPL) of several low-rank decomposition meth
 <img src="./assets/fig5_Combined pruning and quantization.svg" style="width: 130%;height: 100%">
 </div>
 
-**Panel a** presents the results of combining GGUF quantization and Wanda pruning on the LLaMA2-7b model. The 3D surface plot (Panel a) illustrates how perplexity (PPL) varies across different pruning ratios and quantization levels. The figure shows how the performance degrades with increasing compression, with the surface becoming steeper beyond a certain threshold.
+Fig. 6:  **Panel a** presents the results of combining GGUF quantization and Wanda pruning on the LLaMA2-7b model. The 3D surface plot (Panel a) illustrates how perplexity (PPL) varies across different pruning ratios and quantization levels. The figure shows how the performance degrades with increasing compression, with the surface becoming steeper beyond a certain threshold.
 In **Panel b**, the 2D contour projection highlights the best trade-off curve between model size and perplexity. The red line marks the minimal PPL achieved at equivalent compression ratios, while the orange curve shows the phase transition line (PTL), indicating the point beyond which model performance rapidly deteriorates.
 
 
@@ -236,6 +238,13 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 
 ## 📊 Case Studies
 ### Sensitivity to Pruning
+
+<div align="center">
+<img src="./assets/structure_prune.png" style="width: 100%;height: 100%">
+</div>
+
+Fig. 7: This diagram illustrates structured pruning across model components, including neurons, attention heads, channels, sub-layers, and layers. The color intensity indicates the importance of each component: darker colors represent more critical parts, while lighter colors indicate less essential components, which are typically pruned first.
+
 #### Features
 🔍 **Cardinal sparsity thresholds for pruning**
 > Pruning methods across different categories have specific **cardinal sparsity** thresholds that greatly affect their performance.
@@ -259,13 +268,13 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 <img src="./assets/structured_ppl.svg" style="width: 100%;height: 100%">
 </div>
 
-**Fig. 1: Performance comparison of different structured pruning methods applied to LLaMA2-7b, based on the WikiText2-PPL (Perplexity) metric, across varying sparsity levels. The chart highlights the impact of pruning on model performance, with lower PPL values indicating better performance.**
+Fig. 8: Performance comparison of different structured pruning methods applied to LLaMA2-7b, based on the WikiText2-PPL (Perplexity) metric, across varying sparsity levels. The chart highlights the impact of pruning on model performance, with lower PPL values indicating better performance.
 
 <div align="center">
 <img src="./assets/slice.png" style="width: 100%;height: 100%">
 </div>
 
-**Fig. 2: Perplexity performance of LLaMA-3-8B and OPT-6.7B under different pruning ratios (Pruned by Slicegpt).**
+Fig. 9: Perplexity performance of LLaMA-3-8B and OPT-6.7B under different pruning ratios (Pruned by Slicegpt).
 
 
 **Table 1: WikiText2-PPL results for structured pruning (w/o: without finetuning)**
@@ -287,7 +296,7 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 <img src="./assets/10-80.svg" style="width: 100%;height: 100%">
 </div>
 
-**Fig. 3: WikiText2 perplexity (PPL) trends for various structured pruning methods across sparsity levels ranging from 10\% to 80\%. The upper part of the figure shows the overall trend across the full sparsity spectrum, while the lower part zooms in on the 10\%--60\% range to highlight differences among pruning methods at moderate compression levels. Methods with "(ptb)" suffix indicate usage of the PTB calibration dataset in ablation studies. The results show that while many pruning methods suffer significant performance drops at higher sparsity, approaches like Wanda, SparseGPT, and ADMM consistently preserve model quality under lower sparsity, suggesting greater robustness and practical viability. Note that the magnitude pruning curve is omitted from the lower subplot, as it consistently shows the worst degradation and dominates the y-axis range in zoomed-in views.**
+Fig. 10: WikiText2 perplexity (PPL) trends for various structured pruning methods across sparsity levels ranging from 10\% to 80\%. The upper part of the figure shows the overall trend across the full sparsity spectrum, while the lower part zooms in on the 10\%--60\% range to highlight differences among pruning methods at moderate compression levels. Methods with "(ptb)" suffix indicate usage of the PTB calibration dataset in ablation studies. The results show that while many pruning methods suffer significant performance drops at higher sparsity, approaches like Wanda, SparseGPT, and ADMM consistently preserve model quality under lower sparsity, suggesting greater robustness and practical viability. Note that the magnitude pruning curve is omitted from the lower subplot, as it consistently shows the worst degradation and dominates the y-axis range in zoomed-in views.
 
 
 ---
@@ -298,7 +307,7 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 <img src="./assets/semi.svg" style="width: 100%;height: 150%">
 </div>
 
-**Fig. 4: Comparison of the performance of unstructured and structured pruning methods on WikiText2 PPL at 50\% sparsity. The figure compares the perplexity (PPL) of various pruning methods for a model pruned to 50\% sparsity. The methods include unstructured pruning (50\%), and two types of structured pruning: 4:8 and 2:4, which indicate that 4 out of every 8 weights or 2 out of every 4 weights are pruned, respectively.**
+Fig. 11: Comparison of the performance of unstructured and structured pruning methods on WikiText2 PPL at 50\% sparsity. The figure compares the perplexity (PPL) of various pruning methods for a model pruned to 50\% sparsity. The methods include unstructured pruning (50\%), and two types of structured pruning: 4:8 and 2:4, which indicate that 4 out of every 8 weights or 2 out of every 4 weights are pruned, respectively.
 
 
 **Table 2: WikiText2-PPL for different unstructured and semi-structured methods**
@@ -332,7 +341,13 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 <img src="./assets/quant.png" style="width: 70%;height: 70%">
 </div>
 
-**Fig. 5: GGUF progressive quantization with critical 3-bit threshold**
+Fig. 12: GGUF progressive quantization with critical 3-bit threshold**
+
+<div align="center">
+<img src="./assets/sym_quant.png" style="width: 100%;height: 100%">
+</div>
+
+Fig. 13: This figure compares symmetric (a) and asymmetric (b) quantization. In symmetric quantization, the intervals are evenly distributed around zero, while in asymmetric quantization, the intervals are non-symmetric, offering more flexibility for complex data distributions. The figure also shows the quantization and dequantization processes, with average loss values for both methods. Symmetric quantization typically results in higher average loss.
 
 #### Features
 🔍  **Lossless quantization thresholds**
@@ -351,13 +366,13 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 <img src="./assets/gptq.png" style="width: 100%;height: 100%">
 </div>
 
-**Fig. 6: Perplexity of 5 models across quantization levels. (a) PTB. (b) Wikitext2.**
+Fig. 14: Perplexity of 5 models across quantization levels. (a) PTB. (b) Wikitext2.
 
 <div align="center">
 <img src="./assets/quant_performance1-4.svg" style="width: 100%;height: 100%">
 </div>
 
-**Fig. 7: The performance of the Qwen-2.5 model under various GGUF quantization schemes across multiple datasets and scales. This figure presents four subplots stacked vertically: (Top) WikiText2 perplexity (PPL), (Second) ARC-Easy accuracy, (Third) ARC-Challenge accuracy, (Bottom) MMLU accuracy. Results are shown across multiple model scales (0.5B, 1.5B, 3B, 7B, 14B, 32B, and 72B). These subplots demonstrate the performance trends of the Qwen-2.5 model under different quantization settings, helping to illustrate the impact of GGUF quantization on both perplexity and accuracy across a range of tasks and model sizes.**
+Fig. 15: The performance of the Qwen-2.5 model under various GGUF quantization schemes across multiple datasets and scales. This figure presents four subplots stacked vertically: (Top) WikiText2 perplexity (PPL), (Second) ARC-Easy accuracy, (Third) ARC-Challenge accuracy, (Bottom) MMLU accuracy. Results are shown across multiple model scales (0.5B, 1.5B, 3B, 7B, 14B, 32B, and 72B). These subplots demonstrate the performance trends of the Qwen-2.5 model under different quantization settings, helping to illustrate the impact of GGUF quantization on both perplexity and accuracy across a range of tasks and model sizes.
 
 <div align="center">
   <img src="./assets/appendix_fig.a5_Comparison of PPL, ARC-Challenge, and MMLU Losses Across Different Bit Widths and Model Sizes for Various Model Families.svg" 
@@ -365,7 +380,7 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
        alt="Comparison of PPL, ARC-Challenge, and MMLU Losses Across Different Bit Widths and Model Sizes">
 </div>
 
-**Fig. 8: Impact of 2-bit quantization on PPL, ARC-Challenge accuracy, and MMLU accuracy across model scales for various model families (Gemma-3, LLaMA-2, Owner-2.5).**  
+Fig. 16: Impact of 2-bit quantization on PPL, ARC-Challenge accuracy, and MMLU accuracy across model scales for various model families (Gemma-3, LLaMA-2, Owner-2.5).  
 
 **Table 4:Wikitext2-PPL results for various quantization methods with different bit configurations(2K).**
 
@@ -580,7 +595,7 @@ This section examines synergistic effects of combined compression strategies. We
 <img src="./assets/appendix_fig.d1_Comparative analysis of 30+ model compression approaches evaluating perplexity (PPL) on a log scale across two sparsity configurations..svg" style="width: 100%;height: 100%">
 </div>
 
-**Fig. 9: Comparative analysis of model compression approaches evaluating perplexity (PPL) on a log scale across two sparsity configurations. Top: 50\% sparsity performance across four strategy types - quantization (PPL 5.4-5.8), unstructured pruning (PPL 5.9-14.9), semi-structured pruning (PPL 6.8-16.5), structured pruning (PPL 10.2-316.7), and low-rank decomposition (PPL 43.0-nan). Bottom: 4-bit quantization methods (PPL 5.5-5.8) versus 70\% unstructured pruning techniques (PPL 12.1-52.4k). Lower values indicate better language modeling capability retention, demonstrating quantization's stability versus pruning's extreme PPL variance at high sparsity.
+Fig. 17: Comparative analysis of model compression approaches evaluating perplexity (PPL) on a log scale across two sparsity configurations. Top: 50\% sparsity performance across four strategy types - quantization (PPL 5.4-5.8), unstructured pruning (PPL 5.9-14.9), semi-structured pruning (PPL 6.8-16.5), structured pruning (PPL 10.2-316.7), and low-rank decomposition (PPL 43.0-nan). Bottom: 4-bit quantization methods (PPL 5.5-5.8) versus 70\% unstructured pruning techniques (PPL 12.1-52.4k). Lower values indicate better language modeling capability retention, demonstrating quantization's stability versus pruning's extreme PPL variance at high sparsity.
 
 
 
