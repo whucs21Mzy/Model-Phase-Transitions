@@ -630,3 +630,6 @@ Below are the primary models used in this project:
 - **Gemma-3-4b-it**: [google/gemma-3-4b-it · Hugging Face](https://huggingface.co/google/gemma-3-4b-it)
 - **Gemma-3-1b-it**: [google/gemma-3-1b-it · Hugging Face](https://huggingface.co/google/gemma-3-1b-it)
 - **OPT-6.7B**: [facebook/opt-6.7b · Hugging Face](https://huggingface.co/facebook/opt-6.7b)
+- **Mistral-7B**: [mistralai/Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1)
+- **Orca-2-7B**: [microsoft/Orca-2-7b](https://huggingface.co/microsoft/Orca-2-7b)
+- **Bloom-7B**: [bigscience/bloom-7b1](https://huggingface.co/bigscience/bloom-7b1)
