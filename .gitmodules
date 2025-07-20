@@ -1,12 +1,51 @@
 [submodule "Quantization/GGUF/llama.cpp"]
 	path = Quantization/GGUF/llama.cpp
-	url = https://github.com/whucs21Mzy/Model-Phase-Transitions
+	url = https://github.com/ggml-org/llama.cpp
 [submodule "Quantization/gptq"]
 	path = Quantization/gptq
-	url = https://github.com/whucs21Mzy/Model-Phase-Transitions
+	url = https://github.com/IST-DASLab/gptq
 [submodule "Quantization/llm-awq"]
 	path = Quantization/llm-awq
-	url = https://github.com/whucs21Mzy/Model-Phase-Transitions
+	url = https://github.com/mit-han-lab/llm-awq
 [submodule "Quantization/smoothquant"]
 	path = Quantization/smoothquant
-	url = https://github.com/whucs21Mzy/Model-Phase-Transitions
+	url = https://github.com/mit-han-lab/smoothquant
+[submodule "Low-Rank Decomposition/ASVD4LLM"]
+	path = Low-Rank Decomposition/ASVD4LLM
+	url = https://github.com/hahnyuan/ASVD4LLM
+[submodule "Low-Rank Decomposition/SVD-LLM"]
+	path = Low-Rank Decomposition/SVD-LLM
+	url = https://github.com/AIoT-MLSys-Lab/SVD-LLM
+[submodule "Structured Pruning/FLAP"]
+	path = Structured Pruning/FLAP
+	url = https://github.com/CASIA-IVA-Lab/FLAP
+[submodule "Structured Pruning/LLM-Pruner"]
+	path = Structured Pruning/LLM-Pruner
+	url = https://github.com/horseee/LLM-Pruner
+[submodule "Structured Pruning/SLEB"]
+	path = Structured Pruning/SLEB
+	url = https://github.com/jiwonsong-dev/SLEB
+[submodule "Structured Pruning/SliceGPT/TransformerCompression"]
+	path = Structured Pruning/SliceGPT/TransformerCompression
+	url = https://github.com/microsoft/TransformerCompression
+[submodule "Unstructured Pruning/DSnoT"]
+	path = Unstructured Pruning/DSnoT
+	url = https://github.com/zyxxmu/DSnoT
+[submodule "Unstructured Pruning/RIA/Relative-importance-and-activation-pruning"]
+	path = Unstructured Pruning/RIA/Relative-importance-and-activation-pruning
+	url = https://github.com/biomedical-cybernetics/Relative-importance-and-activation-pruning
+[submodule "Unstructured Pruning/sparsegpt"]
+	path = Unstructured Pruning/sparsegpt
+	url = https://github.com/ist-daslab/sparsegpt
+[submodule "Unstructured Pruning/OWL"]
+	path = Unstructured Pruning/OWL
+	url = https://github.com/luuyin/OWL
+[submodule "Unstructured Pruning/BESA"]
+	path = Unstructured Pruning/BESA
+	url = https://github.com/OpenGVLab/LLMPrune-BESA
+[submodule "Unstructured Pruning/Wanda"]
+	path = Unstructured Pruning/Wanda
+	url = https://github.com/locuslab/wanda
+[submodule "Unstructured Pruning/ADMM"]
+	path = Unstructured Pruning/ADMM
+	url = https://github.com/fmfi-compbio/admm-pruning
