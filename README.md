@@ -240,7 +240,7 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 ### Sensitivity to Pruning
 
 <div align="center">
-<img src="./assets/structure_prune.png" style="width: 100%;height: 100%">
+<img src="./assets/structure_prune (1)-1.png" style="width: 100%;height: 100%">
 </div>
 
 Fig. 7: This diagram illustrates structured pruning across model components, including neurons, attention heads, channels, sub-layers, and layers. The color intensity indicates the importance of each component: darker colors represent more critical parts, while lighter colors indicate less essential components, which are typically pruned first.
@@ -344,7 +344,7 @@ Fig. 11: Comparison of the performance of unstructured and structured pruning me
 Fig. 12: GGUF progressive quantization with critical 3-bit threshold**
 
 <div align="center">
-<img src="./assets/sym_quant.png" style="width: 100%;height: 100%">
+<img src="./assets/sym_quant (1)-1.png" style="width: 100%;height: 100%">
 </div>
 
 Fig. 13: This figure compares symmetric (a) and asymmetric (b) quantization. In symmetric quantization, the intervals are evenly distributed around zero, while in asymmetric quantization, the intervals are non-symmetric, offering more flexibility for complex data distributions. The figure also shows the quantization and dequantization processes, with average loss values for both methods. Symmetric quantization typically results in higher average loss.
