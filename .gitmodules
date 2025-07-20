@@ -1,0 +1,12 @@
+[submodule "Quantization/GGUF/llama.cpp"]
+	path = Quantization/GGUF/llama.cpp
+	url = https://github.com/whucs21Mzy/Model-Phase-Transitions
+[submodule "Quantization/gptq"]
+	path = Quantization/gptq
+	url = https://github.com/whucs21Mzy/Model-Phase-Transitions
+[submodule "Quantization/llm-awq"]
+	path = Quantization/llm-awq
+	url = https://github.com/whucs21Mzy/Model-Phase-Transitions
+[submodule "Quantization/smoothquant"]
+	path = Quantization/smoothquant
+	url = https://github.com/whucs21Mzy/Model-Phase-Transitions
