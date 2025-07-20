@@ -67,7 +67,7 @@ Large Language Models (LLMs) exhibit inherent redundancies that enable compressi
 * **Typical PTPs**  
   * Structured pruning: **30–45 % sparsity**
   * Unstructured pruning: **55–65 % sparsity**
-  * Quantization: **≥ 3-bit precision** to stay safe:contentReference
+  * Quantization: **≥ 3-bit precision** to stay safe
   * Low-rank: **≥ 17–30 % sparsity**
 
 ### Major Findings on MPT (Model Phase Transition) Research
