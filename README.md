@@ -341,7 +341,7 @@ Fig. 11: Comparison of the performance of unstructured and structured pruning me
 <img src="./assets/quant.png" style="width: 70%;height: 70%">
 </div>
 
-Fig. 12: GGUF progressive quantization with critical 3-bit threshold**
+Fig. 12: GGUF progressive quantization with critical 3-bit threshold
 
 <div align="center">
 <img src="./assets/sym_quant (1)-1.png" style="width: 100%;height: 100%">
