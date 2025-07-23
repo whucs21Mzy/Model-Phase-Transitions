@@ -212,7 +212,7 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
   [Code](https://github.com/ggml-org/llama.cpp)
 
 - **ZeroQuant** ([NeurIPS'22](https://proceedings.neurips.cc/paper_files/paper/2022/hash/adf7fa39d65e2983d724ff7da57f00ac-Abstract-Conference.html))  
-  _Efficient Finetuning of Quantized LLMs_  
+  _Efficient and Affordable Post-Training Quantization for Large-Scale Transformers_  
   [Code](https://github.com/deepspeedai/DeepSpeed)
 
 ### 🧩 Low-Rank Decomposition
