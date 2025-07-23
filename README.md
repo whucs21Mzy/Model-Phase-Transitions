@@ -211,7 +211,7 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
   _New quantized format for efficient LLM deployment_  
   [Code](https://github.com/ggml-org/llama.cpp)
 
-- **ZeroQuant** ([NeurIPS'22](https://dl.acm.org/doi/10.5555/3666122.3666563))  
+- **ZeroQuant** ([NeurIPS'22](https://proceedings.neurips.cc/paper_files/paper/2022/hash/adf7fa39d65e2983d724ff7da57f00ac-Abstract-Conference.html))  
   _Efficient Finetuning of Quantized LLMs_  
   [Code](https://github.com/deepspeedai/DeepSpeed)
 
