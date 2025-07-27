@@ -154,7 +154,7 @@ In **Panel b**, the 2D contour projection highlights the best trade-off curve be
 
 - ⭐️ **Wanda** ([ICML'23](https://icml.cc/virtual/2023/28297))  
   _A Simple and Effective Pruning Approach for Large Language Models_  
-  [Code](https://eric-mingjie.github.io/wanda/home.html)
+  [Code](https://github.com/locuslab/wanda)
 
 - ⭐️ **SparseGPT** ([ICML'23](https://dl.acm.org/doi/10.5555/3618408.3618822))  
   _Massive Language Models Can Be Accurately Pruned in One-Shot_  
