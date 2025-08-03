@@ -3,8 +3,8 @@
 <img src="./assets/logo.png" style="width: 40%;height: 40%">
 </div>
 
-# Model-Phase-Transitions (MPT)
-Phase Transitions in Large Language Model Compression: A Perspective
+# Model Phase Transitions (MPTs)
+Navigating Model Phase Transitions to Enable Extreme Lossless Compression
 
 
 ## 🌐 Introduction
